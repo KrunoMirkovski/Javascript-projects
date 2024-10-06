@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery With Horizontal Scrolling Using Buttons, Keyboard and Mouse Wheel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery_wrapper">
+        <img src="images/back_btn.png" id="backBtn">
+        <div class="gallery">
+            <div>
+                <span> <img src="images/img1.jpg" alt="image 1"></span>
+                <span> <img src="images/img2.jpg" alt="image 2"></span>
+                <span> <img src="images/img3.jpg" alt="image 3"></span>
+                <span> <img src="images/img4.jpg" alt="image 4"></span>
+            </div>
+            <div>
+                <span> <img src="images/img5.jpg" alt="image 1"></span>
+                <span> <img src="images/img6.jpg" alt="image 2"></span>
+                <span> <img src="images/img7.jpg" alt="image 3"></span>
+                <span> <img src="images/img8.jpg" alt="image 4"></span>
+            </div>
+            <div>
+                <span> <img src="images/img9.jpg" alt="image 1"></span>
+                <span> <img src="images/img10.jpg" alt="image 2"></span>
+                <span> <img src="images/img11.jpg" alt="image 3"></span>
+                <span> <img src="images/img12.jpg" alt="image 4"></span>
+            </div>
+        </div>
+        <img src="images/next_btn.png" id="nextBtn">
+    </div>
+
+    <script>
+        let scrollContainer = document.querySelector(".gallery");
+        let backBtn = document.getElementById("backBtn");
+        let nextBtn = document.getElementById("nextBtn");
+        // Scroll amounts: large for buttons/keys, smaller for mouse wheel
+        let scrollAmount = 1060;
+        let wheelScrollAmount = 100;
+
+        backBtn.addEventListener ("click", ()=>{
+            scrollContainer.style.scrollBehaviour = "smooth";
+            scrollContainer.scrollLeft -= scrollAmount;
+        })
+        nextBtn.addEventListener ("click", ()=>{
+            scrollContainer.style.scrollBehaviour = "smooth";
+            scrollContainer.scrollLeft += scrollAmount;
+        })
+
+     // Function to handle keyboard navigation
+    function handleKeyboardScroll(event) {
+        scrollContainer.style.scrollBehavior = "smooth"; // Ensures smooth scrolling
+        if (event.key === "ArrowRight") {
+            // Scroll right when the right arrow key is pressed
+            scrollContainer.scrollLeft += scrollAmount;
+        } else if (event.key === "ArrowLeft") {
+            // Scroll left when the left arrow key is pressed
+            scrollContainer.scrollLeft -= scrollAmount;
+        }}
+        // Add event listener to detect keypresses
+        window.addEventListener("keydown", handleKeyboardScroll);
+
+     // Function to handle mouse wheel scrolling
+    function handleWheelScroll(event) {
+        // Prevent the default vertical scroll
+        event.preventDefault();
+        
+        // Scroll horizontally based on the wheel delta
+        scrollContainer.scrollLeft += event.deltaY > 0 ? scrollAmount : -scrollAmount;
+    }
+    // Add event listener for mouse wheel scrolling
+    scrollContainer.addEventListener("wheel", handleWheelScroll);
+
+
+
+    </script>
+</body>
+</html>
