@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create A Popup (Modal Box)</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+     <!-- Main container for the content -->
+    <div class="container">
+    <!-- Button to trigger the opening of the popup -->
+        <button type="submit" class="btn" onclick="openPopup()">Open PopUp</button>
+    <!-- Popup box that will be shown/hidden -->
+        <div class="popup" id="popup">
+            <h2>Hello!</h2>
+            <p>Your information has been submitted</p>
+    <!-- Button to close the popup -->
+            <button type="button" onclick="closePopup()">Close PopUp</button>
+        </div>
+    </div>
+    <!-- JavaScript to control the popup functionality -->
+<script>
+    // Get the popup element by its ID and assign it to a variable
+    let popup = document.getElementById("popup");
+    // Function to add a class that shows the popup
+    function openPopup(){
+        popup.classList.add("open-popup")  // Add class to show popup
+    }
+    // Function to remove the class that hides the popup
+    function closePopup(){
+        popup.classList.remove("open-popup") // Remove class to hide popup
+    }
+</script>
+</body>
+</html>
