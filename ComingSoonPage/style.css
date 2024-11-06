@@ -37,6 +37,9 @@ padding: 0;
 .content h1 span{
     color:#df2f2f;
 }
+.content h2{
+    font-size: 20px;
+}
 .content button{
     width: 140px;
     background-color: #df2f2f;
