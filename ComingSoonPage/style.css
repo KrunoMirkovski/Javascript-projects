@@ -27,15 +27,15 @@ padding: 0;
     right: 0;
 }
 .content{
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 24px;
     font-family: "Luckiest Guy", cursive;
     display: flex;
     flex-direction: column;
     justify-content: right;
+    color: whitesmoke;
 }
 .content h1 span{
-    color: #df2f2f;
+    color:#df2f2f;
 }
 .content button{
     width: 140px;
@@ -56,4 +56,13 @@ padding: 0;
 .time p{
     font-size: 40px;
     color: #df2f2f;
+}
+.animation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; 
+    z-index: -1;
 }
