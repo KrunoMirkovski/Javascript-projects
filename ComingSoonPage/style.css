@@ -10,21 +10,31 @@ padding: 0;
 .hero{
     width: 100vw;
     height: 100vh;
+    display: flex;
+}
+.hero-left{
     position: relative;
+    width: 50%;
     background-image:url(images/RedandWhiteComingSoon.png) ;
-    background-position:left;
-    background-size:contain;
+    background-position:center;
+    background-size:cover;
     background-repeat: no-repeat;
 }
-.form{
+.hero-right{
     width: 50%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    right: 0;
+    padding: 12px;
+}
+.right_wrap{
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .content{
     font-size: 24px;
@@ -40,15 +50,6 @@ padding: 0;
 .content h2{
     font-size: 20px;
 }
-.content button{
-    width: 140px;
-    background-color: #df2f2f;
-    border: 3px solid #000000;
-    border-radius: 12px;
-    padding: 10px 20px;
-    color: aliceblue;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
 .countdown{
     display: flex;
 }
@@ -60,12 +61,64 @@ padding: 0;
     font-size: 40px;
     color: #df2f2f;
 }
-.animation{
+.animation {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    object-fit: cover; 
+    object-fit: cover;
     z-index: -1;
+}
+
+@media (max-width: 1200px) {
+    .right_wrap {
+        width: 80%;
+    }
+
+    .content {
+        font-size: 20px;
+    }
+
+    .countdown .time p {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .right_wrap {
+        width: 80%;
+    }
+
+    .content {
+        font-size: 18px;
+    }
+
+    .countdown .time p {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .right_wrap {
+        width: 90%;
+    }
+
+    .content {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .countdown {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .countdown .time {
+        margin-bottom: 10px;
+    }
+
+    .countdown .time p {
+        font-size: 30px;
+    }
 }
